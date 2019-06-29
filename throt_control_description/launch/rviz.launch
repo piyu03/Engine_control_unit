@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <param name="use_gui" value="false"/>
+  <arg name="config" default="rviz_robot"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" required="true" args="-d $(find throt_control_description)/config/$(arg config).rviz"/>
+</launch>
