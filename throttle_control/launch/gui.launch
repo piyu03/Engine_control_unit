@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="throttle_control" type="speed_raw.py" name="speed_raw" />
+  <node pkg="throttle_control" type="speed_loop.py" name="speed_loop" />
+
+
+</launch>

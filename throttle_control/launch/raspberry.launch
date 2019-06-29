@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="sim" default="True"/>
+  <node pkg="throttle_control" type="driver.py" name="driver" output="screen"/>
+  <node pkg="throttle_control" type="enco_feedback.py" name="enco_feedback" output="screen"/>
+
+  <group unless="$(arg sim)">
+    <node pkg="throttle_control" type="feedback.py" name="feedback" output="screen"/>
+  </group>
+
+</launch>

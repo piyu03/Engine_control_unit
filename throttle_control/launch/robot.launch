@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find throttle_control)/launch/gui.launch"/>
+  <include file="$(find throt_control_description)/launch/rviz.launch"/>
+  <include file="$(find throt_control_description)/launch/throttle_description.launch"/>
+  <!-- <include file="$(find throttle_control)/launch/rosbag.launch"/> -->
+  <!-- <include file="$(find throttle_control)/launch/throttle_control.launch"/> -->
+  <node pkg="throttle_control" type="tf_broadcaster.py" name="tf_broadcaster"/>
+  <node pkg="throttle_control" type="speed_raw.py" name="speed_set" />
+
+</launch>

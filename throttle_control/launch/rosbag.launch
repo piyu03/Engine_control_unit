@@ -1,0 +1,15 @@
+<launch>
+
+<arg name="play" default="False"/>
+<arg name="rosbag" default="/home/pi/miniRecords/feedback.bag" />
+
+<group unless="$(arg play)">
+  <!-- <node pkg="throttle_control" type="feedback.py" name="feedback" output="screen"/> -->
+  <node pkg="rosbag" type="record" name="ros_bag" args="-o /home/pi/miniRecords/record_ /feedback_val /dirver_val" output="screen"/>
+</group>
+
+<group if="$(arg play)">
+  <node pkg="rosbag" type="play" name="robot_bag_player" args="$(arg rosbag) --keep-alive --clock"/>
+</group>
+
+</launch>
